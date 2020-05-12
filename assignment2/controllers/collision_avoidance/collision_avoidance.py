@@ -1,4 +1,4 @@
-from controller import Robot
+from controller import Robot,Camera
 
 TIME_STEP = 64
 
@@ -19,7 +19,11 @@ for i in range(4):
     wheels.append(robot.getMotor(wheelsNames[i]))
     wheels[i].setPosition(float('inf'))
     wheels[i].setVelocity(0.0)
-    
+
+#Camera Initialize
+camera0 = robot.getCamera('camera0')
+camera0.enable(TIME_STEP)
+
 avoidObstacleCounter = 0
 
 # feedback loop: step simulation until receiving an exit event
@@ -34,7 +38,7 @@ while robot.step(TIME_STEP) != -1:
     else:  # read sensors
         for i in range(2):
             if ds[i].getValue() < 950.0:
-                avoidObstacleCounter = 100
+                avoidObstacleCounter = 30
                 
     wheels[0].setVelocity(leftSpeed)
     wheels[1].setVelocity(rightSpeed)
