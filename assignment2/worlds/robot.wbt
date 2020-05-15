@@ -49,17 +49,17 @@ Robot {
     }
     DEF TL_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        position 179.2639344653845
+        position 500.09571190081215
         anchor 0.06 0 0.05
       }
       device [
         RotationalMotor {
-          name "tl_wheel"
+          name "tlwheel"
         }
       ]
       endPoint Solid {
-        translation 0.059999999603073784 -2.854417133031882e-06 0.05000269263808757
-        rotation -0.7059329956090293 0.7059355887073492 0.057563445925957156 3.0265930907113714
+        translation 0.059999999603073784 -2.85441713302989e-06 0.05000269263808757
+        rotation -0.7059329956090296 0.7059355887073491 0.05756344592595712 3.0265930907113714
         children [
           DEF WHEEL Shape {
             appearance PBRAppearance {
@@ -77,11 +77,13 @@ Robot {
         boundingObject USE WHEEL
         physics Physics {
         }
+	linearVelocity 0.011619250889313251 -7.459452132703303e-08 -0.03827508208129862
+        angularVelocity -0.9568816848067551 7.728232029795201e-06 -0.29047863003376956
       }
     }
     DEF TR_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        position 170.88006209110733
+        position 452.14101668453543
         anchor -0.06 0 0.05
       }
       device [
@@ -90,8 +92,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.0600000003974106 3.5958543799533063e-06 0.04999842920827169
-        rotation -0.49332930443252027 0.49333111663075296 -0.7164151078473848 4.384905315914677
+        translation -0.0600000003974106 3.595854379952e-06 0.04999842920827169
+        rotation -0.4933293044325202 0.49333111663075313 -0.716415107847385 4.384905315914679
         children [
           USE WHEEL
         ]
@@ -99,11 +101,13 @@ Robot {
         boundingObject USE WHEEL
         physics Physics {
         }
+	linearVelocity 0.011619336347572671 5.411557786317642e-08 -0.03827536359283268
+        angularVelocity -0.9568817074383845 7.728258296789388e-06 -0.29047863669185003
       }
     }
     DEF BL_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        position 179.26393786552165
+        position 500.0957365388898
         anchor 0.06 0 -0.05
       }
       device [
@@ -112,8 +116,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.060000000397222086 -2.854388403688316e-06 -0.049997307331450705
-        rotation -0.7059329460986922 0.7059355392145887 0.057564660046148367 3.026590670473263
+        translation 0.060000000397222086 -2.85438840368608e-06 -0.049997307331450705
+        rotation -0.7059329460986924 0.7059355392145885 0.05756466004614837 3.026590670473263
         children [
           USE WHEEL
         ]
@@ -121,11 +125,13 @@ Robot {
         boundingObject USE WHEEL
         physics Physics {
         }
+	linearVelocity 0.011618953153786778 -5.419754986443827e-08 -0.038275172423012316
+        angularVelocity -0.9568816936127185 7.733482246721763e-06 -0.2904786010135933
       }
     }
     DEF BR_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        position 170.8800654398489
+        position 452.14104124762804
         anchor -0.06 0 -0.05
       }
       device [
@@ -134,8 +140,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.05999999960326252 3.5958376826346768e-06 -0.050001570829962615
-        rotation -0.4933302197063924 0.4933320318882277 -0.71641384732393 4.3849036499099405
+        translation -0.05999999960326252 3.595837682635492e-06 -0.050001570829962615
+        rotation -0.49333021970639246 0.49333203188822755 -0.71641384732393 4.3849036499099405
         children [
           USE WHEEL
         ]
@@ -143,11 +149,13 @@ Robot {
         boundingObject USE WHEEL
         physics Physics {
         }
+	linearVelocity 0.01161903862800375 7.448856132703456e-08 -0.03827545398688044
+        angularVelocity -0.956881716247988 7.733512633422913e-06 -0.29047860767468314
       }
     }
     DEF DS_RIGHT DistanceSensor {
       translation -0.03 0 0.1
-      rotation 0 1 0 -1.87079
+      rotation 0 1 0 -1.8707853071795864
       children [
         Shape {
           appearance PBRAppearance {
@@ -161,10 +169,12 @@ Robot {
         }
       ]
       name "ds_right"
+      type "laser"
+      aperture 0.01
     }
     DEF DS_LEFT DistanceSensor {
       translation 0.03 0 0.1
-      rotation 0 1 0 -1.27079
+      rotation 0 1 0 -1.2707853071795858
       children [
         Shape {
           appearance PBRAppearance {
@@ -178,6 +188,8 @@ Robot {
         }
       ]
       name "ds_left"
+      type "laser"
+      aperture 0.01
     }
   ]
   name "team3_robot"
