@@ -7,8 +7,6 @@ robot = Robot()
 #gps data
 gpsData=[]
 
-
-
 #Distance Sensors (initialize)
 ds = []
 dsNames = ['ds_right', 'ds_left']
@@ -19,7 +17,7 @@ for i in range(2):
     
 #Wheels Initialize    
 wheels = []
-wheelsNames = ['wheel1', 'wheel2', 'wheel3', 'wheel4']
+wheelsNames = ['tlwheel', 'trwheel', 'blwheel', 'brwheel']
 for i in range(4):
     wheels.append(robot.getMotor(wheelsNames[i]))
     wheels[i].setPosition(float('inf'))
