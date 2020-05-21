@@ -31,36 +31,38 @@ camera0.enable(TIME_STEP)
 #gps= robot.getGPS('gps')
 #gps.enable(TIME_STEP)
 
-leftCounter = 0
-rightCounter = 0
-backCounter = 0
+
+
 # feedback loop: step simulation until receiving an exit event
 while robot.step(TIME_STEP) != -1:
  
-    #print('right', ds[0].getValue())
-    #print('left', ds[1].getValue())
-    # print('front', ds[2].getValue())
+    ##print('right', ds[0].getValue())
+    ##print('left', ds[1].getValue())
+    ##print('front', ds[2].getValue())
 
     
+    # avoid obstacle from left and front        
+    if ds[1].getValue() < 1100 or ds[2].getValue() < 1100: 
+        leftSpeed = 2.2
+        rightSpeed = -10
+        
+    # without obstacle
+    else:
+        leftSpeed = 5
+        rightSpeed = 10
     
+    # for u-turn
+    if ds[1].getValue()>3500 and ds[2].getValue()>2000:
+        leftSpeed = 1
+        rightSpeed = 10
+        ##print("56000000000000000000000000000000000") 
+        
+    # escape from "narrowing" paths
     if ds[0].getValue()<1300 and ds[1].getValue()<1300:   
         leftSpeed =2
         rightSpeed=0
-        print("f")          
-    if ds[2].getValue()<1100:
-        leftSpeed = 2
-        rightSpeed = -10
-    elif ds[1].getValue()<900:
-        leftSpeed = 2.2
-        rightSpeed = -3
-    else:
-        leftSpeed = 1
-        rightSpeed = 10
-    
-    
-    
-    
-    
+        ##print("narrowwwwwwwwwwwwwwwwwwwwwwwwwwww")  
+                         
                                  
     wheels[0].setVelocity(leftSpeed)
     wheels[1].setVelocity(rightSpeed)
