@@ -24,7 +24,7 @@ for i in range(4):
 camera0 = robot.getCamera('camera0')
 camera0.enable(TIME_STEP)
 camera1 = robot.getCamera('camera1')
-#camera1.enable(TIME_STEP)
+camera1.enable(TIME_STEP)
 camera0.recognitionEnable(TIME_STEP)
 camera1.recognitionEnable(TIME_STEP)
 
@@ -60,18 +60,18 @@ while robot.step(TIME_STEP) != -1:
     else:
         leftSpeed = 10
         rightSpeed = 6
-    
+        
     # for u-turn
     if ds[0].getValue()>3500 and ds[2].getValue()>2000:
         leftSpeed = 10
         rightSpeed = 1
-        #print("56000000000000000000000000000000000") 
+        # print("56000000000000000000000000000000000") 
         
     # escape from "narrowing" paths
     if ds[0].getValue()<1500 and ds[1].getValue()<1500 and ds[3].getValue()<1500 and  ds[4].getValue()<1500:   
         leftSpeed = -3
         rightSpeed = 8
-        #print("narrowwwwwwwwwwwwwwwwwwwwwwwwwwww")  
+        # print("narrowwwwwwwwwwwwwwwwwwwwwwwwwwww")  
                          
                     
     wheels[0].setVelocity(leftSpeed)
