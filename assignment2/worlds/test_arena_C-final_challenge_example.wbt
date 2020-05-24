@@ -1,10 +1,10 @@
-#VRML_SIM R2020a utf8
+#VRML_SIM R2020b utf8
 WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.9997396849365381 0.010800365063716448 -0.020097623677487138 1.528455417997358
-  position -1.0957857266102051 8.705497880392686 0.3504655512678674
+  orientation -0.9996107525048442 0.005548427660853309 -0.027341514720137728 1.300975433218736
+  position -0.5200291005179704 6.7428617703826434 3.2508267808520634
   followType "Pan and Tilt Shot"
 }
 TexturedBackground {
@@ -247,8 +247,6 @@ DEF BEACONS Group {
       recognitionColors [
         1 0 0
       ]
-      linearVelocity -5.74095186905108e-18 5.684341886080801e-16 1.0192674642995953e-17
-      angularVelocity 9.369794317715593e-17 -2.871459680544954e-17 7.914190336874374e-17
     }
     DEF FCA_CYL Solid {
       translation 1.45752 0.09990189999999999 -0.32853693808493295
@@ -272,8 +270,6 @@ DEF BEACONS Group {
       recognitionColors [
         1 0 1
       ]
-      linearVelocity 6.610427399665414e-18 1.9895196601282806e-16 3.10550628180218e-18
-      angularVelocity 8.628166150854817e-31 -1.4159664808723128e-17 -8.486787652362009e-17
     }
     DEF TEAL_BOX Solid {
       translation -0.5269729995669382 0.19990190000000005 1.4841800004330614
@@ -296,8 +292,6 @@ DEF BEACONS Group {
       recognitionColors [
         0 0.5 0.5
       ]
-      linearVelocity -1.7168508963346656e-17 -4.831690603168682e-16 -2.0609622027701597e-17
-      angularVelocity -1.1760707350512e-16 -7.620087780736928e-18 -1.1760707350512e-16
     }
     DEF BLU_RECT Solid {
       translation 1.5619000005834103 0.10990190000000001 1.3919799998821936
@@ -320,8 +314,6 @@ DEF BEACONS Group {
       recognitionColors [
         0 0 0.5
       ]
-      linearVelocity -5.864729230099912e-18 -1.9895196601282806e-16 -5.363446012579222e-19
-      angularVelocity -3.664227480496218e-32 -2.919328007434731e-18 1.232595164407831e-32
     }
   ]
 }
@@ -334,304 +326,5 @@ StartZone {
     0 0 0.5
   ]
 }
-Robot {
-  translation -1.0540005752112078 0.03986011887514247 1.4819999218187072
-  rotation 2.6201610173559213e-05 0.9999999993151543 -2.6137466691418367e-05 -1.5723853075318117
-  children [
-    Camera {
-      translation 0 0.03 -0.085
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 0 0
-          }
-          geometry Box {
-            size 0.04 0.01 0.01
-          }
-        }
-      ]
-      name "camera1"
-      width 100
-      height 100
-      recognition Recognition {
-      }
-    }
-    DEF DS_FRONT DistanceSensor {
-      translation 0.042 0 0.1
-      rotation 0 1 0 -1.6089896938995747
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.988235 0.913725 0.309804
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "ds_frontleft"
-      lookupTable [
-        0 0 0
-        0.1 1000 0
-        0.2 2000 0
-        0.3 3000 0
-      ]
-      type "laser"
-      aperture 0.01
-    }
-    DEF DS_FRONT DistanceSensor {
-      translation -0.041 0 0.1
-      rotation 0 1 0 -1.4780903061004251
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.988235 0.913725 0.309804
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "ds_frontright"
-      lookupTable [
-        0 0 0
-        0.1 1000 0
-        0.2 2000 0
-        0.3 3000 0
-      ]
-      type "laser"
-      aperture 0.01
-    }
-    GPS {
-    }
-    Camera {
-      translation 0 0.03 0.085
-      rotation 0 1 0 3.14159
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0 0 0
-          }
-          geometry Box {
-            size 0.04 0.01 0.01
-          }
-        }
-      ]
-      name "camera0"
-      width 100
-      height 100
-      recognition Recognition {
-      }
-    }
-    DEF BODY Shape {
-      appearance PBRAppearance {
-        baseColor 0.678431 0.498039 0.658824
-        roughness 1
-        metalness 0
-      }
-      geometry Box {
-        size 0.1 0.05 0.2
-      }
-    }
-    DEF TL_WHEEL HingeJoint {
-      jointParameters HingeJointParameters {
-        position 500.09571190065196
-        anchor 0.06 0 0.05
-      }
-      device [
-        RotationalMotor {
-          name "tlwheel"
-        }
-      ]
-      endPoint Solid {
-        translation 0.059999999603073784 -2.854417132596379e-06 0.05000269263808803
-        rotation -0.7059329956113426 0.7059355887096614 0.057563445869229256 3.0265930908244503
-        children [
-          DEF WHEEL Shape {
-            appearance PBRAppearance {
-              baseColor 0.203922 0.396078 0.643137
-              roughness 1
-              metalness 0
-            }
-            geometry Cylinder {
-              height 0.02
-              radius 0.04
-              subdivision 24
-            }
-          }
-        ]
-        boundingObject USE WHEEL
-        physics Physics {
-        }
-        linearVelocity 1.767929674939352e-12 2.3825040369545798e-11 1.0171145076234826e-12
-        angularVelocity 1.1651250168069045e-13 2.0196523563459676e-11 -6.595499100429174e-11
-      }
-    }
-    DEF TR_WHEEL HingeJoint {
-      jointParameters HingeJointParameters {
-        position 452.14101668467714
-        anchor -0.06 0 0.05
-      }
-      device [
-        RotationalMotor {
-          name "trwheel"
-        }
-      ]
-      endPoint Solid {
-        translation -0.0600000003974106 3.595854380164798e-06 0.049998429208272195
-        rotation -0.49332930447092727 0.49333111666916035 -0.7164151077944898 4.384905315844771
-        children [
-          USE WHEEL
-        ]
-        name "solid(1)"
-        boundingObject USE WHEEL
-        physics Physics {
-        }
-        linearVelocity -6.725223147699057e-13 2.378556615121059e-11 9.880966122626115e-13
-        angularVelocity -5.5170560950394053e-14 2.020051510186438e-11 3.849255420324149e-11
-      }
-    }
-    DEF BL_WHEEL HingeJoint {
-      jointParameters HingeJointParameters {
-        position 500.09573653872957
-        anchor 0.06 0 -0.05
-      }
-      device [
-        RotationalMotor {
-          name "blwheel"
-        }
-      ]
-      endPoint Solid {
-        translation 0.060000000397222086 -2.8543884032522537e-06 -0.04999730733145025
-        rotation -0.7059329461010073 0.7059355392169012 0.05756465998940078 3.0265906705863825
-        children [
-          USE WHEEL
-        ]
-        name "solid(2)"
-        boundingObject USE WHEEL
-        physics Physics {
-        }
-        linearVelocity 1.7718353549645672e-12 2.383214360321953e-11 -9.875920425489291e-13
-        angularVelocity 1.1268668982864095e-13 2.01960547107581e-11 -6.595725116618005e-11
-      }
-    }
-    DEF BR_WHEEL HingeJoint {
-      jointParameters HingeJointParameters {
-        position 452.14104124776964
-        anchor -0.06 0 -0.05
-      }
-      device [
-        RotationalMotor {
-          name "brwheel"
-        }
-      ]
-      endPoint Solid {
-        translation -0.05999999960326252 3.5958376828640114e-06 -0.05000157082996211
-        rotation -0.49333021974476915 0.49333203192660424 -0.7164138472710767 4.384903649840087
-        children [
-          USE WHEEL
-        ]
-        name "solid(3)"
-        boundingObject USE WHEEL
-        physics Physics {
-        }
-        linearVelocity -6.705945763659047e-13 2.3792952105753717e-11 -1.0129894071361073e-12
-        angularVelocity -5.898993184614496e-14 2.0201541390913692e-11 3.849507974497286e-11
-      }
-    }
-    DEF DS_RIGHT DistanceSensor {
-      translation -0.0697959 0.01 0.0574741
-      rotation 0 1 0 3.12165
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.988235 0.913725 0.309804
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "ds_right"
-      rotationStep 0.262
-      lookupTable [
-        0 0 0
-        0.1 1000 0
-        0.2 2000 0
-        0.3 3000 0
-        0.4 4000 0
-        0.5 5000 0
-        0.56 5600 0
-      ]
-      type "laser"
-      aperture 0.01
-    }
-    DEF DS_LEFT DistanceSensor {
-      translation 0.0698 0.01 0.0575
-      rotation 0 1 0 0.176175
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.988235 0.913725 0.309804
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "ds_left"
-      rotationStep 0.262
-      lookupTable [
-        0 0 0
-        0.1 1000 0
-        0.2 2000 0
-        0.3 3000 0
-        0.4 4000 0
-        0.5 5000 0
-        0.56 5600 0
-      ]
-      type "laser"
-      aperture 0.01
-    }
-    DEF DS_FRONT DistanceSensor {
-      translation 0.003 0 0.0999999
-      rotation 0 1 0 -1.8707853071795864
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.988235 0.913725 0.309804
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "ds_front"
-      lookupTable [
-        0 0 0
-        0.1 1000 0
-        0.2 2000 0
-        0.3 3000 0
-      ]
-      type "laser"
-      aperture 0.01
-    }
-  ]
-  name "team3_robot_Cyrano"
-  boundingObject USE BODY
-  physics Physics {
-    density -1
-    mass 1
-  }
-  controller "final_maze"
+group3a_robot {
 }
