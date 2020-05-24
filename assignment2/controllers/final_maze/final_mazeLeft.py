@@ -52,25 +52,25 @@ while robot.step(TIME_STEP) != -1:
     
 
     # avoid obstacle from left and front        
-    if ds[0].getValue() < 1100 or ds[2].getValue() < 1500 or ds[3].getValue()<1500 or  ds[4].getValue()<1500: 
-        leftSpeed = -10
-        rightSpeed = 2.2
+    if ds[1].getValue() < 1100 or ds[2].getValue() < 1500 or ds[3].getValue()<1500 or  ds[4].getValue()<1500: 
+        leftSpeed = 2.2
+        rightSpeed = -10
         
     # without obstacle
     else:
-        leftSpeed = 10
-        rightSpeed = 5
+        leftSpeed = 5
+        rightSpeed = 10
     
     # for u-turn
-    if ds[0].getValue()>3500 and ds[2].getValue()>2000:
-        leftSpeed = 10
-        rightSpeed = 1
+    if ds[1].getValue()>3500 and ds[2].getValue()>2000:
+        leftSpeed = 1
+        rightSpeed = 10
         #print("56000000000000000000000000000000000") 
         
     # escape from "narrowing" paths
     if ds[0].getValue()<1500 and ds[1].getValue()<1500 and ds[3].getValue()<1500 and  ds[4].getValue()<1500:   
-        leftSpeed = -3
-        rightSpeed = 8
+        leftSpeed = 8
+        rightSpeed = -3
         #print("narrowwwwwwwwwwwwwwwwwwwwwwwwwwww")  
                          
                     
@@ -84,7 +84,7 @@ while robot.step(TIME_STEP) != -1:
         color0=(camera0.getRecognitionObjects())[0].get_colors()
         #print(color0)
         #print(color1,"ffffffffffffffffffffff")\
-        if color0 == color1 and ds[2].getValue() < 1500:
+        if color0 == color1 and (ds[2].getValue() < 1500 or ds[3].getValue() < 1500 or ds[4].getValue() < 1500):
                 wheels[0].setVelocity(0)
                 wheels[1].setVelocity(0)
                 wheels[2].setVelocity(0)
